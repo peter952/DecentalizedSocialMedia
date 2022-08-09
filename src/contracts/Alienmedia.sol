@@ -63,7 +63,7 @@ contract Alienmedia {
     address payable _author = _image.author;
     // Pay the author by sending them Ether
     payable(address (_author)).transfer(msg.value);
-
+    // Make sure comment is not empty
     require(bytes(_comment).length > 0);
     // Increment the tip amount
     _image.tipAmount = _image.tipAmount + msg.value;
