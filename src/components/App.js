@@ -85,7 +85,7 @@ class App extends Component {
       }
 
       this.setState({ loading: true })
-      this.state.decentragram.methods.uploadImage(result[0].hash, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.alienmedia.methods.uploadImage(result[0].hash, description).send({ from: this.state.account }).on('transactionHash', (hash) => {
         this.setState({ loading: false })
       })
     })
@@ -93,7 +93,7 @@ class App extends Component {
 
   tipImageOwner(id, tipAmount) {
     this.setState({ loading: true })
-    this.state.decentragram.methods.tipImageOwner(id).send({ from: this.state.account, value: tipAmount }).on('transactionHash', (hash) => {
+    this.state.alienmedia.methods.tipImageOwner(id).send({ from: this.state.account, value: tipAmount }).on('transactionHash', (hash) => {
       this.setState({ loading: false })
     })
   }
@@ -102,7 +102,7 @@ class App extends Component {
     super(props)
     this.state = {
       account: '',
-      decentragram: null,
+      alienmedia: null,
       images: [],
       loading: true
     }
